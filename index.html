@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Real Friend</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</head>
+
+<body>
+
+    <body>
+        <br>
+        <div class="container">
+            <div class="row">
+                <div class="col s12">
+                    <h2 class="center-align">เพื่อนแท้ เราพร้อมให้คำแนะนำกับทุกคำถาม</h2>
+                    <br>
+                    <blockquote>
+                        วิธีการใช้งานเพื่อนแท้!!
+                        <ul>
+                            <li>1). คิดคำถามไว้ในใจแล้วพูดออกมาให้เพื่อนฟัง (เพื่อนจะช่วยได้แค่คำถามแนวๆว่าทำแบบนี้ดีมั้ย หรือกินอันนี้ดีมั้ย) 
+                            </li>
+                            <li>2). กดที่ปุ่มถามเพื่อน</li>
+                            <li>3). อ่านคำแนะนำจากเพื่อนและนำไปใช้งานต่อได้เลย</li>
+                            <li>ในบางครั้งเพื่อนอาจจะอ๊องจนไม่สามารถช่วยคุณได้เพราะฉะนั้น จง ช่วย ตัว เอง</li>
+                        </ul>
+                    </blockquote>
+                    <br>
+                    <p class="center-align">
+                        <a class="waves-effect green darken-3 waves-green btn-large" onclick="askFriend()">ถามเพื่อนเลย</a>
+                    </p>
+                    <br>
+                    <h5 class="center-align" id="answer"></h5>
+                </div>
+            </div>
+        </div>
+    </body>
+</body>
+
+<script>
+    let data = {
+        "text": [
+            "จัดไปอย่าให้เสีย",
+            "คิดว่าดีก็จัดเลย",
+            "อย่าเสี่ยงดีกว่านะ",
+            "มันจางๆอะมึง อะไรไม่รู้แต่จางๆ",
+            "one day or day one อะมึง ถึงเวลาก็ต้องทำแล้วปะ",
+            "จะทำวันนี้หรือจะนั่งดูมันผ่านไปอะ คิดเอา",
+            "มึงแน่ใจนะ ถ้างั้นก็ตามใจ",
+            "จะรออะไรล่ะแม่สาวน้อย จัดไปอย่าให้เสีย",
+            "มึงตัดสินใจเองดีกว่านะ เรื่องนี้เพื่อนจะไม่ยุ่ง",
+            "เอออออ ไม่รู้ว่ะ ลองดูก็ไม่เสียหายหนิ"
+        ]
+    }
+
+    function askFriend(){
+        answer.innerHTML = ""
+        let num_rand = Math.floor(Math.random() * data.text.length);
+        answer.innerHTML += `" ${data.text[num_rand]} "`
+        window.scrollTo(0,document.body.scrollHeight);
+    }
+</script>
+
+</html>
